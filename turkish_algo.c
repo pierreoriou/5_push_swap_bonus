@@ -6,7 +6,7 @@
 /*   By: poriou <poriou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 16:13:00 by poriou            #+#    #+#             */
-/*   Updated: 2024/02/02 13:25:17 by poriou           ###   ########.fr       */
+/*   Updated: 2024/02/02 16:52:11 by poriou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,8 +59,7 @@ void	turkish_algo(t_node **pa)
 		putontop_bef_pb(pa, &pb);
 		i_push(pa, &pb, 'b');
 	}
-	if (!numbers_in_order(*pa))
-		sort_three(pa);
+	sort_three(pa);
 	while (lstsize(pb) > 0)
 	{
 		putontop_bef_pa(pa, &pb);
