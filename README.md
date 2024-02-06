@@ -44,7 +44,7 @@ typedef struct s_node
 }					t_node;
 ```
 2. Creer une pile a partir des valeurs de __elems__ (voir PARSING 3.).
-3. Creer les fonctions pour executer les instructions en prenant en compte la mise a jour des contenus de la structure du node (upd_all : indexes, is_min, is_max, above_med).
+3. Creer les fonctions pour executer les instructions en prenant en compte la mise a jour des contenus de la structure du node (upd_main_properties : indexes, is_min, is_max, above_med).
    - i_swap (et i_swap both)
    - i_rotate (et i_rotate both)
    - i_reverse_rotate (et i_reverse_rotate both)

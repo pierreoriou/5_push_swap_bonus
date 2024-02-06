@@ -1,29 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_min.c                                          :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: poriou <poriou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/02 16:05:24 by poriou            #+#    #+#             */
-/*   Updated: 2024/02/02 16:05:26 by poriou           ###   ########.fr       */
+/*   Created: 2024/02/05 11:08:43 by poriou            #+#    #+#             */
+/*   Updated: 2024/02/05 11:09:01 by poriou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../checker.h"
+#include "libft.h"
 
-int	get_min(t_node *pile)
+t_list	*ft_lstlast(t_list *lst)
 {
-	int	min;
-
-	if (!pile)
-		return (0);
-	min = pile->value;
-	while (pile)
-	{
-		if (pile->value < min)
-			min = pile->value;
-		pile = pile->next;
-	}
-	return (min);
+	if (!lst)
+		return (lst);
+	while (lst->next)
+		lst = lst->next;
+	return (lst);
 }

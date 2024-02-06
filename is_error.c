@@ -6,7 +6,7 @@
 /*   By: poriou <poriou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 10:04:42 by poriou            #+#    #+#             */
-/*   Updated: 2024/02/01 14:06:40 by poriou           ###   ########.fr       */
+/*   Updated: 2024/02/06 12:09:23 by poriou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,9 +94,9 @@ int	is_error(char **elem)
 	char	*str;
 
 	i = 0;
-	if (elem[i] == NULL)
+	if (elem[i] == NULL || elem[i][0] == '\0')
 	{
-		ft_putstr_fd("Error\n", 2);
+		ft_putendl_fd("Error", 2);
 		return (1);
 	}
 	while (elem[i] != NULL)
@@ -107,7 +107,7 @@ int	is_error(char **elem)
 			|| beyond_limits(str) || is_dup(elem, i))
 		{
 			free(str);
-			ft_putstr_fd("Error\n", 2);
+			ft_putendl_fd("Error", 2);
 			return (1);
 		}
 		free(str);

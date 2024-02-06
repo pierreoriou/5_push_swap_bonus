@@ -19,7 +19,7 @@ SRC =	main.c \
 		upd_is_max.c \
 		upd_indexes.c \
 		upd_above_med.c \
-		upd_all.c \
+		upd_main_properties.c \
 		i_swap.c \
 		i_rotate.c \
 		i_reverse_rotate.c \
@@ -47,7 +47,11 @@ CFLAGS = -Wall -Wextra -Werror
 
 LIBFT_PATH = ./Libft
 
+CHECKER_PATH = ./Checker
+
 LIBFT_NAME = libft.a
+
+CHECKER_NAME = checker
 
 %.o: %.c ${INCLUDES}
 	${CC} ${CFLAGS} -c $< -o $@
@@ -60,14 +64,21 @@ all: ${NAME}
 ${LIBFT_PATH}/${LIBFT_NAME}:
 	make -C ${LIBFT_PATH}
 
+${CHECKER_PATH}/${CHECKER_NAME}:
+	make -C ${CHECKER_PATH}
+
+bonus: ${CHECKER_PATH}/${CHECKER_NAME}
+
 clean:
 	rm -f ${OBJ}
 	make clean -C ${LIBFT_PATH}
+	make clean -C ${CHECKER_PATH}
 
 fclean: clean
 	rm -rf ${NAME}
-	make fclean -C ${LIBFT_PATH}
+	rm -rf ${LIBFT_PATH}/${LIBFT_NAME}
+	rm -rf ${CHECKER_NAME}
 
 re: fclean all
 
-.PHONY: all re fclean clean
+.PHONY: all re fclean clean bonus

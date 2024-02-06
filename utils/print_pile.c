@@ -6,7 +6,7 @@
 /*   By: poriou <poriou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 10:55:59 by poriou            #+#    #+#             */
-/*   Updated: 2024/02/01 12:15:21 by poriou           ###   ########.fr       */
+/*   Updated: 2024/02/05 15:21:17 by poriou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	print_pile(char *explain, t_node *pile)
 		return ;
 	while (pile)
 	{
-		printf("%s: %d\n", explain, pile->value);
+		ft_printf("%s: %d\n", explain, pile->value);
 		pile = pile->next;
 	}
 }

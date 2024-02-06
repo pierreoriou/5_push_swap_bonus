@@ -1,35 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fill_pile.c                                        :+:      :+:    :+:   */
+/*   inst_add_back.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: poriou <poriou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/30 10:52:43 by poriou            #+#    #+#             */
-/*   Updated: 2024/02/05 10:19:26 by poriou           ###   ########.fr       */
+/*   Created: 2023/12/06 16:22:50 by poriou            #+#    #+#             */
+/*   Updated: 2024/02/05 11:09:40 by poriou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../checker.h"
 
-t_node	*fill_pile(char **elem)
+void	inst_add_back(t_inst **lst, t_inst *new)
 {
-	int		index;
-	int		value;
-	t_node	*pile;
-	t_node	*new_node;
+	t_inst	*tmp;
 
-	if (!elem || !*elem)
-		return (NULL);
-	index = 0;
-	pile = NULL;
-	while (elem[index])
+	if (!new)
+		return ;
+	if (!*lst)
 	{
-		value = ft_atoi(elem[index]);
-		new_node = lstnew(value);
-		lstadd_back(&pile, new_node);
-		index++;
+		*lst = new;
+		return ;
 	}
-	upd_main_properties(pile);
-	return (pile);
+	tmp = inst_last(*(lst));
+	tmp->next = new;
 }

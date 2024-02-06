@@ -1,21 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   upd_all.c                                          :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: poriou <poriou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/30 17:10:12 by poriou            #+#    #+#             */
-/*   Updated: 2024/02/01 14:09:22 by poriou           ###   ########.fr       */
+/*   Created: 2023/12/01 11:49:02 by poriou            #+#    #+#             */
+/*   Updated: 2024/02/05 15:17:40 by poriou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-void	upd_all(t_node *pile)
+t_list	*ft_lstnew(void *content)
 {
-	upd_indexes(pile);
-	upd_is_min(pile);
-	upd_is_max(pile);
-	upd_above_med(pile);
+	t_list	*new_node;
+
+	new_node = (t_list *)malloc(sizeof(t_list));
+	if (!new_node)
+		return (NULL);
+	new_node->content = content;
+	new_node->next = NULL;
+	return (new_node);
 }

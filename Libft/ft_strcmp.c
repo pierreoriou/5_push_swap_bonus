@@ -1,35 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fill_pile.c                                        :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: poriou <poriou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/30 10:52:43 by poriou            #+#    #+#             */
-/*   Updated: 2024/02/05 10:19:26 by poriou           ###   ########.fr       */
+/*   Created: 2024/02/05 12:03:45 by poriou            #+#    #+#             */
+/*   Updated: 2024/02/06 15:44:36 by poriou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-t_node	*fill_pile(char **elem)
+int	ft_strcmp(const char *s1, const char *s2)
 {
-	int		index;
-	int		value;
-	t_node	*pile;
-	t_node	*new_node;
+	int	i;
 
-	if (!elem || !*elem)
-		return (NULL);
-	index = 0;
-	pile = NULL;
-	while (elem[index])
-	{
-		value = ft_atoi(elem[index]);
-		new_node = lstnew(value);
-		lstadd_back(&pile, new_node);
-		index++;
-	}
-	upd_main_properties(pile);
-	return (pile);
+	i = 0;
+	while (s1[i] == s2[i] && s1[i])
+		i++;
+	return (s1[i] - s2[i]);
 }

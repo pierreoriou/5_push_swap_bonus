@@ -1,22 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast_bonus.c                                 :+:      :+:    :+:   */
+/*   i_push.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: poriou <poriou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/06 12:53:52 by poriou            #+#    #+#             */
-/*   Updated: 2023/12/06 18:00:13 by poriou           ###   ########.fr       */
+/*   Created: 2024/01/30 16:18:13 by poriou            #+#    #+#             */
+/*   Updated: 2024/02/05 13:03:44 by poriou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "checker.h"
 
-t_list	*ft_lstlast(t_list *lst)
+void	i_push(t_node **psrc, t_node **pdest)
 {
-	if (!lst)
-		return (lst);
-	while (lst->next)
-		lst = lst->next;
-	return (lst);
+	t_node	*first_a;
+	t_node	*second_a;
+	t_node	*first_b;
+
+	if (!psrc || !*psrc || !pdest)
+		return ;
+	first_a = *psrc;
+	second_a = first_a->next;
+	first_b = *pdest;
+	*pdest = first_a;
+	first_a->next = first_b;
+	*psrc = second_a;
 }

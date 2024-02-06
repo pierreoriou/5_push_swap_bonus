@@ -6,13 +6,13 @@
 /*   By: poriou <poriou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 15:23:45 by poriou            #+#    #+#             */
-/*   Updated: 2024/02/06 12:08:33 by poriou           ###   ########.fr       */
+/*   Updated: 2024/02/06 11:32:31 by poriou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker.h"
 
-void	i_reverse_rotate(t_node **pile, char c)
+void	i_reverse_rotate(t_node **pile)
 {
 	t_node	*first;
 	t_node	*bef_last;
@@ -28,11 +28,6 @@ void	i_reverse_rotate(t_node **pile, char c)
 	last->next = first;
 	*pile = last;
 	bef_last->next = NULL;
-	upd_main_properties(*pile);
-	if (c == 'a')
-		ft_putendl_fd("rra", 1);
-	if (c == 'b')
-		ft_putendl_fd("rrb", 1);
 }
 
 void	i_reverse_rotate_both(t_node **pa, t_node **pb)
@@ -41,7 +36,6 @@ void	i_reverse_rotate_both(t_node **pa, t_node **pb)
 		return ;
 	if (!pb || !*pb || !(*pb)->next)
 		return ;
-	i_reverse_rotate(pa, 'c');
-	i_reverse_rotate(pb, 'c');
-	ft_putendl_fd("rrr", 1);
+	i_reverse_rotate(pa);
+	i_reverse_rotate(pb);
 }

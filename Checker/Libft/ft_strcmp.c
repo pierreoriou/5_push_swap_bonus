@@ -1,30 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   upd_is_max.c                                       :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: poriou <poriou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/02 16:01:39 by poriou            #+#    #+#             */
-/*   Updated: 2024/02/02 16:01:43 by poriou           ###   ########.fr       */
+/*   Created: 2024/02/05 12:03:45 by poriou            #+#    #+#             */
+/*   Updated: 2024/02/06 15:44:10 by poriou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker.h"
+#include "libft.h"
 
-void	upd_is_max(t_node *pile)
+int	ft_strcmp(const char *s1, const char *s2)
 {
-	int	max;
+	int	i;
 
-	if (!pile)
-		return ;
-	max = get_max(pile);
-	while (pile)
-	{
-		if (pile->value == max)
-			pile->is_max = true;
-		else
-			pile->is_max = false;
-		pile = pile->next;
-	}
+	i = 0;
+	while (s1[i] == s2[i] && s1[i])
+		i++;
+	return (s1[i] - s2[i]);
 }

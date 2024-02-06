@@ -1,29 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_max.c                                          :+:      :+:    :+:   */
+/*   inst_last.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: poriou <poriou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/02 16:05:06 by poriou            #+#    #+#             */
-/*   Updated: 2024/02/02 16:05:07 by poriou           ###   ########.fr       */
+/*   Created: 2023/12/06 12:53:52 by poriou            #+#    #+#             */
+/*   Updated: 2024/02/05 11:09:48 by poriou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../checker.h"
 
-int	get_max(t_node *pile)
+t_inst	*inst_last(t_inst *lst)
 {
-	int	max;
-
-	if (!pile)
-		return (0);
-	max = pile->value;
-	while (pile)
-	{
-		if (pile->value > max)
-			max = pile->value;
-		pile = pile->next;
-	}
-	return (max);
+	if (!lst)
+		return (lst);
+	while (lst->next)
+		lst = lst->next;
+	return (lst);
 }

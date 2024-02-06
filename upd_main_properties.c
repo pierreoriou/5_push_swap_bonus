@@ -1,34 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   upd_main_properties.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: poriou <poriou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/02 15:07:28 by poriou            #+#    #+#             */
-/*   Updated: 2024/02/02 16:45:21 by poriou           ###   ########.fr       */
+/*   Created: 2024/02/05 10:17:10 by poriou            #+#    #+#             */
+/*   Updated: 2024/02/05 10:18:15 by poriou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker.h"
+#include "push_swap.h"
 
-int	main(int argc, char *argv[])
+void	upd_main_properties(t_node *pile)
 {
-	char	**elem;
-	t_node	*pile;
-
-	if (argc < 2
-		|| (argc == 2 && argv[1][0] == '\0'))
-		return (0);
-	elem = get_elem(argv);
-	if (is_error(elem))
-	{
-		free_tab(elem);
-		return (0);
-	}
-	pile = fill_pile(elem);
-	launch_checker(pile, elem);
-	free_tab(elem);
-	clear_pile(&pile);
-	return (0);
+	upd_indexes(pile);
+	upd_is_min(pile);
+	upd_is_max(pile);
+	upd_above_med(pile);
 }

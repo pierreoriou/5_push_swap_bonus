@@ -4,20 +4,24 @@ SRC =	main.c \
 		is_error.c \
 		fill_pile.c \
 		get_elem.c \
-		upd_all.c \
-		upd_above_med.c \
-		upd_indexes.c \
-		upd_is_max.c \
-		upd_is_min.c \
-		launch_checker.c \
+		stash_instructions.c \
+		execute_instructions.c \
+		check_order.c \
+		numbers_in_order.c \
+		i_push.c \
+		i_swap.c \
+		i_rotate.c \
+		i_reverse_rotate.c \
 		utils/clear_pile.c \
 		utils/free_tab.c \
 		utils/lstadd_back.c \
 		utils/lstlast.c \
 		utils/lstnew.c \
+		utils/inst_add_back.c \
+		utils/inst_last.c \
+		utils/inst_new.c \
+		utils/inst_clear.c \
 		utils/lstsize.c \
-		utils/get_max.c \
-		utils/get_min.c \
 
 OBJ = ${SRC:.c=.o}
 
@@ -35,7 +39,7 @@ LIBFT_NAME = libft.a
 	${CC} ${CFLAGS} -c $< -o $@
 
 ${NAME}: ${OBJ} ${LIBFT_PATH}/${LIBFT_NAME}
-	${CC} ${CFLAGS} -o ${NAME} ${SRC} -L${LIBFT_PATH} -lft
+	${CC} ${CFLAGS} -o ../${NAME} ${SRC} -L${LIBFT_PATH} -lft
 
 all: ${NAME}
 
@@ -47,7 +51,7 @@ clean:
 	make clean -C ${LIBFT_PATH}
 
 fclean: clean
-	rm -rf ${NAME}
+	rm -rf ../${NAME}
 	make fclean -C ${LIBFT_PATH}
 
 re: fclean all

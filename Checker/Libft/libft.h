@@ -6,7 +6,7 @@
 /*   By: poriou <poriou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 18:03:30 by poriou            #+#    #+#             */
-/*   Updated: 2024/02/02 16:15:48 by poriou           ###   ########.fr       */
+/*   Updated: 2024/02/06 15:55:15 by poriou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ int		ft_isspace(int c);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 int		ft_numlen(int n);
 int		ft_numlen_base(int n, char *base);
+int		ft_strcmp(const char *s1, const char *s2);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
@@ -108,12 +109,14 @@ void	pf_print_uint(t_print *tab);
 /********** GET_NEXT_LINE **********/
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 10
+#  define BUFFER_SIZE 1
 # endif
 
 char	*get_next_line(int fd);
-char	*gnl_strchr(char *str, char c);
-char	*gnl_strjoin(char *s1, char *s2);
-size_t	gnl_strlen(char *s);
+char	*gl_strchr(char *s, int c);
+char	*gl_substr(char *s, unsigned int start, size_t len);
+char	*gl_strjoin(char *s1, char *s2);
+char	*gl_strdup(char *s);
+size_t	gl_strlen(char *s);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: poriou <poriou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 10:08:52 by poriou            #+#    #+#             */
-/*   Updated: 2024/02/02 13:34:30 by poriou           ###   ########.fr       */
+/*   Updated: 2024/02/06 12:10:06 by poriou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,7 @@ int	main(int argc, char *argv[])
 	char	**elem;
 	t_node	*pile;
 
-	if (argc < 2
-		|| (argc == 2 && argv[1][0] == '\0'))
+	if (argc < 2)
 		return (0);
 	elem = get_elem(argv);
 	if (is_error(elem))

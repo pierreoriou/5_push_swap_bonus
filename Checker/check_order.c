@@ -1,26 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   check_order.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: poriou <poriou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/01 11:49:02 by poriou            #+#    #+#             */
-/*   Updated: 2024/02/01 14:19:10 by poriou           ###   ########.fr       */
+/*   Created: 2024/02/05 12:47:30 by poriou            #+#    #+#             */
+/*   Updated: 2024/02/05 14:55:56 by poriou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <stdio.h>
+#include "checker.h"
 
-t_list	*ft_lstnew(void *content)
+void	check_order(t_node *pile)
 {
-	t_list	*new_node;
-
-	new_node = (t_list *)malloc(sizeof(t_list));
-	if (!new_node)
-		return (NULL);
-	new_node->content = content;
-	new_node->next = NULL;
-	return (new_node);
+	if (!numbers_in_order(pile))
+		ft_putendl_fd("KO", 1);
+	else
+		ft_putendl_fd("OK", 1);
 }

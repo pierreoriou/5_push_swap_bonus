@@ -6,12 +6,11 @@
 /*   By: poriou <poriou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 11:49:02 by poriou            #+#    #+#             */
-/*   Updated: 2024/02/01 14:19:10 by poriou           ###   ########.fr       */
+/*   Updated: 2024/02/05 15:17:48 by poriou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 t_list	*ft_lstnew(void *content)
 {

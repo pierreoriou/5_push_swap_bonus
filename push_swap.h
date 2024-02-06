@@ -6,7 +6,7 @@
 /*   By: poriou <poriou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 17:21:28 by poriou            #+#    #+#             */
-/*   Updated: 2024/02/02 12:47:15 by poriou           ###   ########.fr       */
+/*   Updated: 2024/02/05 15:19:25 by poriou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include "Libft/libft.h"
 # include <stdbool.h>
-# include <stdio.h>
 
 typedef struct s_node
 {
@@ -45,7 +44,7 @@ t_node	*determine_max(t_node *pile);
 t_node	*determine_min(t_node *pile);
 
 // update nodes
-void	upd_all(t_node *pile);
+void	upd_main_properties(t_node *pile);
 void	upd_indexes(t_node *pile);
 void	upd_is_min(t_node *pile);
 void	upd_is_max(t_node *pile);
