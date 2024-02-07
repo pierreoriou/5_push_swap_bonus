@@ -31,7 +31,7 @@ CC = cc
 
 CFLAGS = -Wall -Wextra -Werror
 
-LIBFT_PATH = ./Libft
+LIBFT_PATH = ../Libft
 
 LIBFT_NAME = libft.a
 

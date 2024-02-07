@@ -6,16 +6,15 @@
 /*   By: poriou <poriou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 15:07:56 by poriou            #+#    #+#             */
-/*   Updated: 2024/02/06 15:32:15 by poriou           ###   ########.fr       */
+/*   Updated: 2024/02/06 16:54:33 by poriou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CHECKER_H
 # define CHECKER_H
 
-# include "./Libft/libft.h"
+# include "../Libft/libft.h"
 # include <stdbool.h>
-# include <stdio.h>
 
 typedef struct s_node
 {

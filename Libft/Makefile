@@ -67,6 +67,8 @@ SRC = ft_atoi.c \
       pf_print_str.c \
       pf_print_uint.c \
       pf_unbrlen.c \
+      Get_next_line/get_next_line.c \
+      Get_next_line/get_next_line_utils.c \
 
 INCLUDES = libft.h
 

@@ -6,27 +6,11 @@
 /*   By: poriou <poriou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 16:13:00 by poriou            #+#    #+#             */
-/*   Updated: 2024/02/05 15:07:57 by poriou           ###   ########.fr       */
+/*   Updated: 2024/02/07 11:27:35 by poriou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	complete_sort_pb(t_node **pile)
-{
-	t_node	*max;
-
-	if (!pile || !*pile)
-		return ;
-	max = determine_max(*pile);
-	while (max->index)
-	{
-		if (max->above_med)
-			i_rotate(pile, 'b');
-		else if (!max->above_med)
-			i_reverse_rotate(pile, 'b');
-	}
-}
 
 void	complete_sort_pa(t_node **pile)
 {
