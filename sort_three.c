@@ -6,7 +6,7 @@
 /*   By: poriou <poriou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 14:56:59 by poriou            #+#    #+#             */
-/*   Updated: 2024/02/01 14:47:53 by poriou           ###   ########.fr       */
+/*   Updated: 2024/02/08 10:28:34 by poriou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,5 @@ void	sort_three(t_node **pile)
 		i_reverse_rotate(pile, 'a');
 	if ((*pile)->value > (*pile)->next->value)
 		i_swap(pile, 'a');
-	upd_indexes(*pile);
+	upd_main_properties(*pile);
 }

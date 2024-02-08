@@ -67,7 +67,7 @@ ${LIBFT_PATH}/${LIBFT_NAME}:
 ${CHECKER_PATH}/${CHECKER_NAME}:
 	make -C ${CHECKER_PATH}
 
-bonus: ${CHECKER_PATH}/${CHECKER_NAME}
+bonus: all ${CHECKER_PATH}/${CHECKER_NAME}
 
 clean:
 	rm -f ${OBJ}

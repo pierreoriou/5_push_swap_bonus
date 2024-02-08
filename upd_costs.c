@@ -6,7 +6,7 @@
 /*   By: poriou <poriou@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 11:33:05 by poriou            #+#    #+#             */
-/*   Updated: 2024/02/01 14:12:07 by poriou           ###   ########.fr       */
+/*   Updated: 2024/02/08 13:26:40 by poriou           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	node_cost(t_node *node, t_node *pile)
 	if (node->above_med)
 		cost = node->index;
 	else
-			cost = lstsize(pile) - node->index;
+		cost = lstsize(pile) - node->index;
 	return (cost);
 }
 

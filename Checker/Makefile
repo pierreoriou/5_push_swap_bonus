@@ -1,4 +1,4 @@
-NAME = checker
+NAME = ../checker
 
 SRC =	main.c \
 		is_error.c \
@@ -39,7 +39,7 @@ LIBFT_NAME = libft.a
 	${CC} ${CFLAGS} -c $< -o $@
 
 ${NAME}: ${OBJ} ${LIBFT_PATH}/${LIBFT_NAME}
-	${CC} ${CFLAGS} -o ../${NAME} ${SRC} -L${LIBFT_PATH} -lft
+	${CC} ${CFLAGS} -o ${NAME} ${SRC} -L${LIBFT_PATH} -lft
 
 all: ${NAME}
 
@@ -51,7 +51,7 @@ clean:
 	make clean -C ${LIBFT_PATH}
 
 fclean: clean
-	rm -rf ../${NAME}
+	rm -rf ${NAME}
 	make fclean -C ${LIBFT_PATH}
 
 re: fclean all

@@ -1,3 +1,5 @@
 {
-	"C_Cpp.dimInactiveRegions": false
+	"files.associations": {
+		"stdbool.h": "c"
+	}
 }
